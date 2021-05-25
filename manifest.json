@@ -1,0 +1,33 @@
+{
+    "name": "Anti-Quax",
+    "description": "",
+    "version": "19.0",
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "browser_action": {
+        "default_title": "BROWSER_ACTION_TITLE"
+    },
+    "content_scripts": [{
+        "matches": [
+            "*://*/*"
+        ],
+        "js": [
+            "content_script.js"
+        ],
+        "all_frames": true,
+        "run_at": "document_end"
+    }],
+    "manifest_version": 2,
+    "permissions": ["storage"],
+    "web_accessible_resources": [
+        "asset/*"
+    ]
+}
